@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ztrk1600/hello-nodejs/issues"
   },
-  "homepage": "https://github.com/ztrk1600/hello-nodejs#readme"
+  "homepage": "https://github.com/ztrk1600/hello-nodejs#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
 }
