@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XHR</title>
+  </head>
+  <body>
+    <input type="text" id="xhr-response" />
+    <p id="xhr-error" style="color: red"></p>
+
+    <script>
+      let xhr = new XMLHttpRequest();
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+
+        if (xhr.status === 200) {
+          document.getElementById('xhr-response').value = xhr.responseText;
+        } else {
+          document.getElementById('xhr-error').innerText = xhr.statusText;
+        }
+      };
+      xhr.onerror = function () {
+        document.getElementById('xhr-error').innerText = 'An error has occurred.';
+      };
+
+      xhr.open('GET', 'http://34.217.120.26:3000/');
+      xhr.send(null);
+    </script>
+  </body>
+</html>
