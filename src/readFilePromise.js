@@ -10,11 +10,9 @@ function readFilePromise(path, options = {}) {
 }
 
 if (require.main === module) {
-	(function test() {
+	(async function test() {
 		// print out the script itself
-		readFilePromise(__filename, { encoding: 'utf8' })
-			.then(data => {
-				console.log(data);
-			})
+		let data = await readFilePromise(__filename, { encoding: 'utf8' });
+		console.log(data);
 	})();
 }
