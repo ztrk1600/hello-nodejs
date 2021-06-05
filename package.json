@@ -18,6 +18,8 @@
   "homepage": "https://github.com/ztrk1600/hello-nodejs#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "bluebird": "^3.7.2"
+    "bluebird": "^3.7.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5"
   }
 }
