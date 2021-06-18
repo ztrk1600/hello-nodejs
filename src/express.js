@@ -6,6 +6,9 @@ const port = 8080;
 
 let app = express();
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 app.use('/', express.static('public'));
 app.use((req, res, next) => {
 	console.info(`new request:`, req.method, req.url);
@@ -13,7 +16,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', function (req, res) {
-	res.send('<h1>Home</h1><p>Welcome home!</p>');
+	res.render('index', { title: 'Home' });
 });
 app.get('/hi', function (req, res) {
 	let name = req.query.name || 'guest';
